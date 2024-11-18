@@ -5,14 +5,16 @@ red_pin=9 #define o pino do led vermelho
 green_pin=10 #define o pino do led verde
 blue_pin=11 #define o pino do led azul
 
+pwm_pin=12 #pino do pwm do código anterior
+
 
 if __name__ == '__main__':
 
-    try:
-        GPIO.cleanup() # Limpa a configuração dos pinos GPIO      
+    try:      
  
         GPIO.setmode(GPIO.BCM) #configurando o modo do gpio
 
+        #configurando pinos do semáforo
         GPIO.setup(red_pin , GPIO.OUT) #configurando o pino do led vermelho como saida
         GPIO.setup(green_pin , GPIO.OUT) #configurando o pino do led verde como saida
         GPIO.setup(blue_pin , GPIO.OUT) #configurando o pino do led azul como saida
