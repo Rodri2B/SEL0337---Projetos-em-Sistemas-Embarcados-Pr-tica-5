@@ -1,0 +1,9 @@
+[Unit]
+Description= LED PWM
+After=multi-user.target
+[Service]
+ExecStart=/home/sel/SEL0337---Projetos-em-Sistemas-Embarcados-Pratica-5/pyenv/bin/python3 /home/sel/SEL0337---Projetos-em-Sistemas-Embarcados-Pratica-5/prat3_proj2_1.py
+ExecStop=/home/sel/SEL0337---Projetos-em-Sistemas-Embarcados-Pratica-5/pyenv/bin/python3 /home/sel/SEL0337---Projetos-em-Sistemas-Embarcados-Pratica-5/qualquer.py
+user=SEL
+[Install]
+WantedBy=multi-user.target
