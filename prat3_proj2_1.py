@@ -11,11 +11,11 @@ if __name__ == '__main__':
 
         GPIO.setup(pwm_pin , GPIO.OUT) #configurando o pino 12 como saida
 
-        pwm = GPIO.PWM(pwm_pin , 100) #configuando o pwm no pino 12
+        pwm = GPIO.PWM(pwm_pin , 5) #configuando o pwm no pino 12 com 5Hz
         pwm.start (0) #inicializando pwm com duty cycle 0
 
 
-        pwm.ChangeDutyCycle(10) #configurando o duty cycle para 10%
+        pwm.ChangeDutyCycle(50) #configurando o duty cycle para 50%
         
         #loop para previnir o programa de fechar
         while True:
