@@ -5,8 +5,6 @@ red_pin=9 #define o pino do led vermelho
 green_pin=10 #define o pino do led verde
 blue_pin=11 #define o pino do led azul
 
-pwm_pin=12 #pino do pwm do código anterior
-
 
 if __name__ == '__main__':
 
