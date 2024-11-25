@@ -1,9 +1,22 @@
 [Unit]
+#Descrição do serviço
 Description= LED PWM
+
+#indica que o serviço será inicializado apenas após o sistema atingir o nível de execução multiusuário
 After=multi-user.target
 [Service]
+
+#especifica o comando ou script que será executado ao iniciar o serviço
 ExecStart=/home/sel/SEL0337---Projetos-em-Sistemas-Embarcados-Pratica-5/pyenv/bin/python3 /home/sel/SEL0337---Projetos-em-Sistemas-Embarcados-Pratica-5/prat3_proj2_1.py
+
+#especifica o comando ou script que será executado ao parar o serviço
 ExecStop=/home/sel/SEL0337---Projetos-em-Sistemas-Embarcados-Pratica-5/pyenv/bin/python3 /home/sel/SEL0337---Projetos-em-Sistemas-Embarcados-Pratica-5/semaforo_on_stop.py
+
+#o serviço será executado com os privilégios do usuário sel
 user=sel
 [Install]
+
+#vincula o serviço ao alvo multi-user.target, permitindo que 
+#ele seja habilitado para inicialização automática sempre 
+#que o sistema atingir esse estado operacional
 WantedBy=multi-user.target

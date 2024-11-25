@@ -149,7 +149,7 @@ Por fim, foi feita a montagem para a realização dos testes. Na figura 1 é pos
 
 
 <p align="center">
-<img width="70%" src="img/montagem.jpg">
+<img width="70%" src="img/montagem.png">
 <br>
 <em><b>Figura 1:</b> Montagem do circuito para teste com a Raspberry Pi.</em>
 </p>

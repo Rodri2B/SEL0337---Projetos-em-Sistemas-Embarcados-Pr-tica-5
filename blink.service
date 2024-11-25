@@ -1,8 +1,19 @@
 [Unit]
+#Descrição do serviço
 Description= Blink LED
+
+#indica que o serviço será inicializado apenas após o sistema atingir o nível de execução multiusuário
 After=multi-user.target
 [Service]
+
+#especifica o comando ou script que será executado ao iniciar o serviço
 ExecStart=/home/sel/SEL0337---Projetos-em-Sistemas-Embarcados-Pratica-5/blink.sh
+
+#o serviço será executado com os privilégios do usuário sel
 user=sel
 [Install]
+
+#vincula o serviço ao alvo multi-user.target, permitindo que 
+#ele seja habilitado para inicialização automática sempre 
+#que o sistema atingir esse estado operacional
 WantedBy=multi-user.target
