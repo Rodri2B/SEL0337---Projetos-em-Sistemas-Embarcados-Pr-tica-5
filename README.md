@@ -29,11 +29,22 @@ Em seguida, é nescessário habilitá-lo para execução automática.
 ```
 sudo systemctl enable blink.service
 ```
+Reinicializar systemctl.
+
+```
+sudo systemctl daemon-reload
+```
 
 A execução imediata pode ser feita com `sudo systemctl start blink.service`.
 
 ```
 sudo systemctl start blink.service`
+```
+
+Para parar o serviço pode ser feito com:
+
+```
+sudo systemctl stop blink.service`
 ```
 ## 2.2 Código blink.sh
 
@@ -44,10 +55,10 @@ Na primeira etapa, o script configura o pino 18, permitindo que o sistema operac
 ```
 echo 18 > /sys/class/gpio/export 
 ```
-Em seguida, o script define o pino 18 como uma saídaecho. Isso indica que o pino será usado para enviar sinais elétricos, para ligar ou desligar o LED.
+Em seguida, o script define o pino 18 como uma saída. Isso indica que o pino será usado para enviar sinais elétricos, para ligar ou desligar o LED.
 
 ```
-out > /sys/class/gpio/gpio18/direction
+echo out > /sys/class/gpio/gpio18/direction
 ```
 
 Após a configuração inicial, o script entra em um loop infinito com a estrutura `while [ 1 ]`, que executará as ações repetidamente até que o processo seja manualmente encerrado. Dentro do loop, o pino GPIO é controlado, sendo ligado e desligado. Isso é feito escrevendo os valores 1 e 0 no arquivo `/sys/class/gpio/gpio18/value`. 
@@ -134,12 +145,25 @@ Além disso, no bloco finally, o comando GPIO.cleanup() é utilizado para limpar
 
 ## 2.2 Montagem do circuito para testar os programas
 
-Por fim, foi feita a montagem para a realização dos testes. Na figura 1, é possível visualizar o circuito funcionando com os serviços e scripts desenvolvidos.
+Por fim, foi feita a montagem para a realização dos testes. Na figura 1 é possivel ver a montagem, nas figuras 2 e 3, é possível visualizar o circuito funcionando com os serviços e scripts desenvolvidos.
+
 
 <p align="center">
+<img width="70%" src="img/montagem.jpg">
 <br>
-<em><b>Figura 1:</b> Montagem e teste do circuito para testar os código juntamente com os serviços na Raspberry Pi.</em>
-<img width="70%" src="img/montagem.png">
+<em><b>Figura 1:</b> Montagem do circuito para teste com a Raspberry Pi.</em>
+</p>
+
+<p align="center">
+<img width="70%" src="img/pwm.jpg">
+<br>
+<em><b>Figura 2:</b> Montagem e teste do circuito para testar os código juntamente com os serviços na Raspberry Pi, nesse caso temos o serviço do pwm junto com o blink.</em>
+</p>
+
+<p align="center">
+<img width="70%" src="img/pwm_rgb.jpg">
+<br>
+<em><b>Figura 3:</b> Montagem e teste do circuito para testar os código juntamente com os serviços na Raspberry Pi, nesse caso temos o serviço do pwm parado junto com o serviço blink .</em>
 </p>
 
 
